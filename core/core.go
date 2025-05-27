@@ -59,17 +59,13 @@ func (c *Core) Update() {
 	if !c.Ready() {
 		return
 	}
+	algo := GetAlgo(c.algoIndex)
 	for _y := range c.height - 2 {
 		for _x := range c.width - 2 {
 			y := _y + 1
 			x := _x + 1
 			c.buffer[x][y] = 0
-			switch c.algoIndex {
-			case 1:
-				c.TwoCell(x, y)
-			default:
-				c.SingleCell(x, y)
-			}
+			algo(c.grid, c.buffer, x, y)
 		}
 	}
 
