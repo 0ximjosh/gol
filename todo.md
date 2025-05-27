@@ -2,7 +2,5 @@
 - ssh client
 - cli args
 - more update cycle options
-- change colors
 - show current algo
-- refactor algos to be detached from core
-- dynamic cell creation (select type of cell via click count)
+- dynamic cell creation (select type of cell via click count) (dynamic color toggle on number of press)
