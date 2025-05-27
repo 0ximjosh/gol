@@ -6,23 +6,15 @@ package main
 
 import (
 	"fmt"
-	"image/color"
 	"os"
 
 	"gol/core"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/lipgloss"
 )
 
 const (
 	fps = 20
-)
-
-var (
-	blue   color.Color = color.RGBA{69, 145, 196, 255}
-	yellow color.Color = color.RGBA{255, 230, 120, 255}
-	orange             = lipgloss.NewStyle()
 )
 
 type model struct {
