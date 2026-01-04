@@ -5,16 +5,13 @@ package main
 // double-width runes.
 
 import (
+	"flag"
 	"fmt"
 	"os"
 
 	"gol/core"
 
 	tea "github.com/charmbracelet/bubbletea"
-)
-
-const (
-	fps = 20
 )
 
 type model struct {
@@ -48,8 +45,9 @@ func (m model) View() string {
 }
 
 func main() {
+	fps := flag.Int("fps", 20, "fps of the simulation")
 	m := model{}
-	m.Core.Fps = fps
+	m.Core.Fps = *fps
 
 	p := tea.NewProgram(m, tea.WithAltScreen(), tea.WithMouseCellMotion())
 	if _, err := p.Run(); err != nil {
